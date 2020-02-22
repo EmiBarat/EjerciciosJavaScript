@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Ejercicio004 operadores</title>
+    </head>
+    <body>
+        <!-- definicion del array -->
+        <Script>
+            var valores = [true, 5, false, "hola", "adios", 2];
+            alert("Estos son los valores del array\n"+ valores[0] + "; " + valores[1]+ "; " + valores[2] +"; "+valores[3]
+            + "; " + valores[4] + "; " + valores[5]);            
+        </Script>
+        <!-- punto 1 -->
+        <script>
+            var textoMayor = valores[3] > valores[4];
+            alert("Punto 1\n" + "\"Hola\" es mayor que \"adios\"\n" + textoMayor);
+        </script>
+        <!-- punto 2  -->
+        <script>
+            var resultadoFalso = valores[0] && valores[2];
+            var resultadoVerdadero = valores[0] || valores[2];
+            alert("true && false = " + resultadoFalso + "\ntrue || false = " + resultadoVerdadero);
+            
+        </script>
+        <!-- punto 3 -->
+        <!-- trate de hacerlo usando la misma variable para todos los resultados
+        y para mi sorpresa FUNCIONO :-O -->
+        <script>
+            var resultado = valores[1] + valores[5];
+            alert(resultado);
+            var resultado = valores[1] - valores[5];
+            alert(resultado);
+            var resultado = valores[1] / valores[5];
+            alert(resultado);
+            var resultado = valores[1] * valores[5];
+            alert(resultado);
+            var resultado = valores[1] % valores[5];
+            alert(resultado);
+        </script>
+
+    </body>
+</html>
