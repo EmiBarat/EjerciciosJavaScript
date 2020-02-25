@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Par o impar??</title>        
+    </head>
+    <body>
+        <script>
+            function par_o_impar (numero){
+                    if(numero % 2 == 0){
+                        var texto = "par";
+                    }
+                    else{
+                        var texto = "impar";
+                    }
+                    return texto;
+                }
+
+                // function es_entero(numero){
+                //    return numero % 1 == 0;
+                    
+                // }
+
+
+            var numeroIngresado = parseFloat (prompt("Ingrese un numero entero positivo"));
+            
+            if(numeroIngresado < 0 || numeroIngresado % 1 != 0){
+                alert("No ingres\u00F3 un numero acorde con la instrucci\u00F3.\nIngrese uno numero v\u00E1lido");
+            }
+            else{
+                alert(par_o_impar(numeroIngresado));
+
+            }
+        </script>
+        <p>Esta p&aacute;gina determina la paridad o no de un n&uacute;mero</p>
+    </body>
+</html>
