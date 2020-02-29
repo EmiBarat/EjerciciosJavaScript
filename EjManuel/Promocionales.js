@@ -42,13 +42,13 @@ const rendidas = [
         for (let i = 0; i < array.length; i++) {
             var promedio = promedioNotas(rendidas[i].examenA,rendidas[i].examenB);
             if (promedio >= 8){
-                alumnosPromocionados[i] = rendidas[i].alumno;
+                alumnosPromocionados.push (rendidas[i].alumno);
             }
             else if(promedio >= 6){
-                alumnosNoPromocionados[i] = rendidas[i].alumno;
+                alumnosNoPromocionados.push(rendidas[i].alumno);
             }
             else {
-                alumnosDesaprobados[i] = rendidas[i].alumno;
+                alumnosDesaprobados.push(rendidas[i].alumno);
             }
         }
     }
