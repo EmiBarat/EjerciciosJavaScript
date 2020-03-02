@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">    
+    <title>Nueva Factura</title>
+    <script src="EjerFactura01.js"></script>
+</head>
+<body>
+    <h1>Nueva Factura</h1>
+
+    <br/><br/>
+
+    <!-- Este codigo lo robé de por ahi, devuelve un true si las teclas presionadas son numero.
+    la funcion se utiliza en el 'onKeyPress' del input en cuestion -->
+    <script type="text/javascript">
+        
+        function isNumberKey(evt)
+        {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+    
+            return true;
+        }
+        
+        </script>
+
+    <p>
+        Nro Factura &nbsp;&nbsp;&nbsp;
+        <input type="numeric" name="NroFactura" id="txtNroFact" placeholder="solo ingresar numeros" onkeypress="return isNumberKey(this);">
+    </p>
+
+    <p>
+        Fecha &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="fecha" id="dtpFechaFactura" maxlength="10" min="1900/01/01" max="" placeholder="dd/mm/aaaa">
+    </p>
+
+    <p>
+        Cliente &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input  size="150" type="text" name="cliente" id="txtCliente" maxlength="200">
+    </p>
+    <p>
+        <!-- le pase como value un string con el % de impuesto, no se si es correcto -->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="iva" value="21" id="rbtConsumidorFinal"> Consumidor Final - 21% <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="iva" value= "10.5" id="rbtResponsableInscripto"> Responsable Inscripto - 10.5% <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="iva" value= "0" id="rbtExento"> Exento - 0% <br/>
+        <!-- me gustaria que ninguno sea checked por defecto para obligar a elegir uno
+        y poder validar si ninguno fue seleccionado -->
+    </p>
+
+    <p>
+        
+        <input type="text" required name="descripcion_producto" id="txtDescripProd" placeholder="Descripcion del producto" maxlength="140">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- Convertir a "float" en el script -->
+        <input type="number" min="0" required name="precio_unitario" id="txtPrecioUni" placeholder="Precio Unitario">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- convertir a "int" en el script -->
+        <input type="number" min="0" required name="cantidad" id="txtCantidad" placeholder="Cantidad">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- podria estar disabled hasta que no se completan los campos requeridos -->
+        <input type="button" name="Agregar_Producto" value="Agregar" id="btnAgregarProducto">
+    </p>
+
+    <table border="1" name="tablaProductos" id="tablaProductos">
+        <tr>
+            <td>Producto</td>
+            <td>Cantidad</td>
+            <td>Precio unitario</td>
+            <td>Importe</td>
+        </tr>
+    </table>
+    <p>
+        Subtotal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="subtotal" id="txtSubtotal" readonly>
+    </p>
+    <p>
+        Impuestos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Impuestos" id="txtImpuestos" readonly>
+    </p>
+    <p>
+        Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="total" id="txtTotal" readonly>
+    </p>
+    <p>
+        <input type="button" value="Guardar Factura" id="btnGuardarFactura">
+    </p>
+
+</body>
+</html>
