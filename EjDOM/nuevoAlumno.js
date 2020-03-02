@@ -2,7 +2,7 @@ window.onload = function(){
   
     let btnGuardar = document.getElementById('btnGuardar');
 
-    function getData(){
+    function getData()  {
 
         let nombre = document.getElementById('nom');
         let apellido = document.getElementById('ape');
