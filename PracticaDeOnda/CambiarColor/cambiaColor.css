@@ -1,0 +1,54 @@
+.div-texto{
+    background-color: aqua;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 10;
+    border-bottom-left-radius: 50px;
+
+}
+.titulo{
+    color:white;
+    padding-left: 20px;
+}
+.red{
+    color: red;
+    padding-left: 20px;
+}
+.blue{
+    color: blue;
+    padding-left: 20px;
+}
+.yellow{
+    color: yellow;
+    padding-left: 20px;
+}
+.botones{
+    background-color: whitesmoke;
+    border-radius: 10px 20px 10px 20px;
+    border: 1px royalblue solid;
+}
+.txtParrafoOriginal{
+    border: 3px red solid;
+    border-radius: 3px;
+    height: 60px;
+    width: 300px;
+}
+
+.txtParrafoFocus{
+    border: 3px blue dotted;
+    border-radius: 3px;
+    height: 60px;
+    width: 300px;
+}
+
+.textoBello{
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    font-family: cursive;
+    color: blueviolet;
+    border: 2px royalblue solid;
+    border-radius: 3px 15px 3px 15px;
+
+
+}
