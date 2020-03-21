@@ -7,7 +7,7 @@
         <!-- Quise hacerlo con un imput pero no llegue... -->
         <!-- <p>Ingres&aacute; los 8 digitos d e tu DNI &nbsp;&nbsp; <input type="numbre" id="numeroDNI" maxlength="8"></p> -->
         <script type="text/javascript">
-            
+            // arreglo que contiene las posibles letras asignadas al DNI; el resto de la division (nroDNI / 23) nos da la posicion del arreglo.
             var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
             var numeroDNI = prompt("ingrse los 8 digitos de su DNI");
             if (0 > numeroDNI || numeroDNI > 99999999){

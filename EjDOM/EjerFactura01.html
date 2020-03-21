@@ -41,6 +41,7 @@
     </p>
     <p>
         <!-- le pase como value un string con el % de impuesto, no se si es correcto -->
+        <!-- arreglar esto. lo paso como texto y resuelvo con un if... -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="radio" name="iva" value="21" id="rbtConsumidorFinal"> Consumidor Final - 21% <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -75,15 +76,15 @@
     </table>
     <p>
         Subtotal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="subtotal" id="txtSubtotal" readonly>
+        <input type="number" name="subtotal" id="txtSubTotal" value="" readonly>
     </p>
     <p>
         Impuestos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="Impuestos" id="txtImpuestos" readonly>
+        <input type="number" name="Impuestos" id="txtImpuestos" readonly>
     </p>
     <p>
         Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="total" id="txtTotal" readonly>
+        <input type="number" name="total" id="txtTotal" readonly>
     </p>
     <p>
         <input type="button" value="Guardar Factura" id="btnGuardarFactura">

@@ -54,12 +54,14 @@ window.onload = function(){
     var divParrafo = document.getElementById("divParrafoLindo");
     
     btnParrafo.onclick = function(){
-        var textoParrafo = txtParrafo.value;
-        var parrafo = document.createElement("p");
-        var contenidoParrafo = document.createTextNode(textoParrafo);
-        parrafo.appendChild(contenidoParrafo);
-        divParrafo.appendChild(parrafo);
-        parrafo.setAttribute("class", "textoBello");
+     
+    var textoParrafo = txtParrafo.value;
+    var parrafo = document.createElement("p");
+    var contenidoParrafo = document.createTextNode(textoParrafo);
+    parrafo.appendChild(contenidoParrafo);
+    divParrafo.appendChild(parrafo);
+    parrafo.setAttribute("class", "textoBello");
     }
+
     
 }

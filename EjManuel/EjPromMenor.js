@@ -27,17 +27,13 @@ const rendidas = [
     ];
 
     function NombreMenorPromedio(a){
-        let menorPromedio = 0;
+        let menorPromedio = Infinity;
         let alumnoMenorProm = "";
-        let bandera = 0;
+        
         
         
         for (let i = 0; i < rendidas.length; i++) {
-            if (bandera = 0) {
-                menorPromedio = (rendidas[0].examenA + rendidas[0].examenB)/2;
-                bandera = 1;
-                continue;
-            }
+                        
             let promedio = (rendidas[i].examenA + rendidas[i].examenB)/2;
             let alumno = rendidas[i].alumno;
             if (menorPromedio > promedio) {

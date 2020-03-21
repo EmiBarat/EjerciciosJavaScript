@@ -7,5 +7,6 @@ window.onload = function(){
     botonCalcular.onclick = function multiplicar(){
         resultado.value = parseFloat(factor1.value) * parseFloat(factor2.value)
     } 
+    
 }
 

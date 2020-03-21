@@ -47,17 +47,21 @@ window.onload = function(){
 
     function validarProducto(p){
         if(!p.descripcionProducto){
-            alert("Es un campo requerido");
+            alert("La 'descripcion del producto' es un campo requerido");
             return;
         }
+        if(!p.precioUnitario){
+            alert("El campo precio no puede quedar vacio");
+        }
         if(p.precioUnitario < 0){
-            alert("El campo no acepta valores negativos");
+            alert("El campo 'precio' unitario no acepta valores negativos");
             return;
         }
         if(p.cantidad < 0 || p.cantidad%1 != 0){
-            alert("El campo no acepta valores negativos, ni decimales");
+            alert("El campo 'cantidad' no acepta valores negativos, ni decimales");
             return;
         }
+        return true;
 
     }
 
@@ -75,24 +79,37 @@ window.onload = function(){
     //         // de carga del producto
     //     }
     // }
+    
+    let sumaImportes = 0;
 
     btnAgregarProducto.onclick = function(){
+        
         let dF = getDataFactura();
         let dP = getDataProducto();
+        
+
         if(validarFactura(dF)){
+            
             if(validarProducto(dP)){
+                
                 let nuevaFila = document.createElement('tr');
-                // let infoVenta = getDataProducto();
-                nuevaFila.innerHTML = '<td>'+dP.descripcionProducto+'</td> <td>'
-                                        + dP.precioUnitario+'</td> <td>'
-                                        + dp.cantidad+'</td> <td>'
-                                        + calcularImporte(dp.precioUnitario, dp.cantidad) + '</td>';
+                let infoProducto = dP.descripcionProducto;
+                let precioUni = dP.precioUnitario;
+                let cantidad = dP.cantidad;               
+                nuevaFila.innerHTML = '<td>'+infoProducto+'</td> <td>'
+                                        + precioUni+'</td> <td>'
+                                        + cantidad+'</td> <td>'
+                                        + calcularImporte(precioUni, cantidad) + '</td>';
                 let tablaProductos = document.getElementById('tablaProductos');
                 tablaProductos.appendChild(nuevaFila);
-                //aca continua todo lo de sub total impuesto y Total.
+                let subTotal = document.getElementById('txtSubTotal');
+                let impuesto = document.getElementById('txtImpuestos');
+                let total = document.getElementById('txtTotal');
+                sumaImportes += (precioUni*cantidad); 
+                subTotal.value = sumaImportes;
             }
         }   
         
     }
 
-};
+}
